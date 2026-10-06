@@ -1,0 +1,16 @@
+# 换行策略：一律原样存取，禁用 git 的自动换行转换。
+#
+# 原因：本仓库同时含两种对换行敏感的文件
+#   - install.bat  -> 必须 CRLF（LF 的 .bat 在 cmd 下会出错）
+#   - install.sh   -> 必须 LF  （CRLF 的 shell 脚本在 macOS/Linux 报 "bad interpreter"）
+# 只要 core.autocrlf 生效，两者必有一个被破坏。
+* -text
+
+# 二进制资源
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.xlsx binary
